@@ -1,0 +1,130 @@
+.entry {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    /* align-items: center; */
+    /* gap: 170px; */
+    justify-content: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    padding-bottom: 16px;
+}
+
+.entry .title {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 40px;
+    /* justify-content: space-around; */
+    /* align-items: center; */
+    gap: 24px;
+}
+
+.entry .title span {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 37px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+.entry .title p {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    margin: 0px;
+
+    /* height: 170px; */
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 84px;
+    line-height: 86px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.entry .buttons {
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0px 16px;
+}
+
+.entry .buttons .login {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.entry .buttons .login button {
+    display: flex;
+    flex-direction: row;
+    background: #2F80ED;
+    box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+
+    /* White */
+
+    color: #FFFFFF;
+
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.entry .buttons .register {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.entry .buttons .register button {
+    display: flex;
+    flex-direction: row;
+    background: #F2C94C;
+    /* Drop Shadow 1 */
+
+    box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+
+    /* White */
+
+    color: #FFFFFF;
+
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    border: none;
+    outline: none;
+    width: 100%;
+}

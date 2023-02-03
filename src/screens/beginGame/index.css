@@ -1,0 +1,106 @@
+.begin-game-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    gap: 37px;
+    /* overflow: hidden; */
+    padding-left: 22px;
+    padding-right: 22px;
+}
+
+.begin-game-container .login-header {
+    display: flex;
+    width: 100%;
+    padding-top: 18px;
+}
+
+.begin-game-container .title {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    /* padding-left: 22px; */
+    padding-top: 18px;
+    padding-right: 81px;
+}
+
+.begin-game-container .title span {
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    /* identical to box height, or 129% */
+
+
+    color: #333333;
+}
+
+.begin-game-container .title p {
+    /* padding-right: 40px; */
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+    /* or 114% */
+
+    letter-spacing: -0.05em;
+
+    /* Dark Grey */
+
+    color: #333333;
+}
+
+/* ************************************ */
+
+.begin-game-container .board {
+    width: 100%;
+    height: 100%;
+}
+
+.begin-game-container .button {
+    width: 100%;
+    height: 100%;
+    padding: 0px 16px;
+    padding-bottom: 14px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.begin-game-container .button .login {
+    display: flex;
+    flex-direction: row;
+    height: 56px;
+    width: 100%;
+}
+
+.begin-game-container .button .login button {
+    display: flex;
+    flex-direction: row;
+    background: #F2C94C;
+    /* Drop Shadow 1 */
+
+    box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+
+    /* White */
+
+    color: #FFFFFF;
+
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    border: none;
+    outline: none;
+    width: 100%;
+}

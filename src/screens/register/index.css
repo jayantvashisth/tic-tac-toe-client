@@ -1,0 +1,133 @@
+.register-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    gap: 37px;
+    /* overflow: hidden; */
+}
+
+.register-container .register-header {
+    display: flex;
+    width: 100%;
+    padding-left: 22px;
+    padding-top: 18px;
+}
+
+.register-container .title {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    width: 100%;
+    padding-left: 22px;
+    padding-top: 18px;
+}
+
+.register-container .title span {
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+
+    /* Dark Grey */
+
+    color: #333333;
+}
+
+.register-container .title p {
+    padding-right: 40px;
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+    /* or 114% */
+
+    letter-spacing: -0.05em;
+
+    /* Dark Grey */
+
+    color: #333333;
+}
+
+.register-container .register-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-left: 22px;
+    padding-right: 22px;
+    width: 100%;
+}
+
+.register-container .register-content .input {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.register-container .register-content .input span {
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+
+    /* Dark Grey */
+
+    color: #333333;
+}
+
+.register-container .register-content .input input {
+    outline: none;
+    border: none;
+    padding: 20px 16px 16px;
+    background: #F4F4F4;
+    border-radius: 8px;
+}
+
+.register-container .button {
+    width: 100%;
+    height: 100%;
+    padding: 0px 16px;
+    padding-bottom: 14px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.register-container .button .register {
+    display: flex;
+    flex-direction: row;
+    height: 56px;
+    width: 100%;
+}
+
+.register-container .button .register button {
+    display: flex;
+    flex-direction: row;
+    background: #F2C94C;
+    /* Drop Shadow 1 */
+
+    box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+
+    /* White */
+
+    color: #FFFFFF;
+
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    border: none;
+    outline: none;
+    width: 100%;
+}

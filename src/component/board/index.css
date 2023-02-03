@@ -1,0 +1,39 @@
+.board-container {
+    display: flex;
+    flex-direction: column;
+    background: #FFE79E;
+}
+
+.board-container .board-title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background: #FFE79E;
+    height: 47.29px;
+    justify-content: center;
+}
+
+.board-container .board-title span {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18.9159px;
+    line-height: 22px;
+    text-align: center;
+
+    color: #212121;
+}
+
+.board-container .board-pieces {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.board-container .board-pieces .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+

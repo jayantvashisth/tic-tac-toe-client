@@ -1,25 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Entry from './screens/entry';
+import Register from './screens/register';
+import Login from './screens/login';
+import StartGame from './screens/startGame';
+import Dashboard from './screens/dashboard';
+import ProtectedRoutes from './ProtectedRoutes';
+import { BeginGame } from './screens/beginGame';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<Entry />} />
+                    <Route path='/register' element={<Register />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/startgame' element={<ProtectedRoutes><StartGame /></ProtectedRoutes>} />
+                    <Route path='/dashboard' element={<ProtectedRoutes><Dashboard /></ProtectedRoutes>} />
+                    <Route path='/begingame' element={<ProtectedRoutes><BeginGame /></ProtectedRoutes>} />
+
+                </Routes>
+            </BrowserRouter>
+        </>
+    );
 }
 
 export default App;

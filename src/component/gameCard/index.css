@@ -1,0 +1,96 @@
+.game-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    width: 88vw;
+    height: 200px;
+    padding: 16px;
+
+    background: #FFFFFF;
+    box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+.game-card-container .title {
+    width: 100%;
+}
+
+.game-card-container .title span {
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 25px;
+    /* identical to box height */
+
+
+    color: #333333;
+
+}
+
+.game-card-container .match-info {
+    width: 100%;
+}
+
+.game-card-container .match-info span {
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    /* or 129% */
+
+
+    color: #333333;
+}
+
+.game-card-container .time {
+    width: 100%;
+}
+
+.game-card-container .time span {
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    /* identical to box height, or 150% */
+
+
+    color: #3F3F3F;
+}
+
+.game-card-container .play-button {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 100%;
+}
+
+.game-card-container .play-button button {
+    display: flex;
+    flex-direction: row;
+    background: #F2C94C;
+    /* Drop Shadow 1 */
+
+    box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+
+    /* White */
+
+    color: #FFFFFF;
+
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    width: 100%;
+}
