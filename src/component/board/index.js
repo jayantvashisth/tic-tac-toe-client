@@ -11,7 +11,7 @@ function Board() {
     const [squares, setSquares] = useState(Array(9).fill(null))
     const [, updateState] = React.useState();
     const forceUpdate = React.useCallback(() => updateState({}), []);
-    const xIsNext = useRef(true);
+    const [XisNext, setXisNext] = useState(true)
     const Chance = useRef(1);
     const Player = useRef('');
 
@@ -30,13 +30,13 @@ function Board() {
 
     socket.on('squareClickedReceived', click => {
         const i = click.i;
-        console.log("hellooooooooooo")
-        console.log("oye", i);
-        squares[i] = xIsNext.current ? 'X' : 'O';
-        xIsNext.current = !xIsNext.current;
+        // console.log("hellooooooooooo")
+        // console.log("oye", i);
+        squares[i] = XisNext.current ? 'X' : 'O';
+        setXisNext(!XisNext)
         setSquares(squares);
 
-        Player.current = click.gameContext?.user;
+        Player.current = click.user;
 
         if (Chance.current === 2) Chance.current = 1;
         if (Chance.current === -1) Chance.current = 2;
@@ -48,22 +48,25 @@ function Board() {
 
 
     const handleClick = (i) => {
+        console.log("xis", XisNext)
+        if (XisNext) {
+            if (Chance.current === -1 || logic(squares) || squares[i]) {
+                return;
+            }
 
-        if ( Chance.current === -1 || logic(squares) || squares[i]) {
-            return;
+            console.log('emitting', i);
+            console.log(user)
+            const click = {
+                i: i,
+                name: user,
+                userId: 1234,
+                roomId: room
+
+            };
+            setXisNext(!XisNext)
+            socket.emit('squareClicked', click);
+            Chance.current = -1;
         }
-
-        console.log('emitting', i);
-        console.log(user)
-        const click = {
-            i: i,
-            name: user,
-            userId: 1234,
-            roomId: room
-            // hello:"burrah"
-        };
-        socket.emit('squareClicked', click);
-        Chance.current = -1;
     }
 
 
@@ -76,9 +79,9 @@ function Board() {
     }
 
     return (
-        <div className="board-container">
+        <div className="board-container" style={XisNext ? { backgroundColor: "#FFE79E" } : { backgroundColor: "#DDDDDD" }}>
             <div className="board-title">
-                <span>Your move</span>
+                <span>{logic(squares) == 'X' && gameContext.challenger == gameContext.user ? "You won" : logic(squares) == 'O' && gameContext.defender == gameContext.user ? "You won" : XisNext && gameContext.challenger == gameContext.user ? "Your turn" : XisNext && gameContext.defender == gameContext.user ? "waiting for opponent" : "its a draw"}</span>
             </div>
             <div className="board-pieces">
                 <div className="row">

@@ -11,6 +11,8 @@ function GameCard(props) {
 
     const joinRoom = () => {
         socket.emit('join', props.roomId);
+        gameContext.setChallenger(props.challenger)
+        gameContext.setDefender(props.defender)
         gameContext.setroomID(props.roomId)
         navigate('/begingame')
     }
@@ -18,7 +20,7 @@ function GameCard(props) {
     return (
         <div className="game-card-container">
             <div className="title">
-                <span>Game with {props.name}</span>
+                <span>Game with {props.name === props.challenger ? props.defender : props.challenger}</span>
             </div>
             <div className="match-info">
                 <span>{props.name} just made their move! It’s your turn to play now.</span>
@@ -27,7 +29,7 @@ function GameCard(props) {
                 <span>{props.roomId}</span>
             </div>
             <div className="play-button">
-                <button onClick={() => { joinRoom() }}>Play!</button>
+                <button onClick={() => { joinRoom(); }}>Play!</button>
             </div>
         </div>
     )

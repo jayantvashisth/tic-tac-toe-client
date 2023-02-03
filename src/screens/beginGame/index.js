@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './index.css'
 import { useNavigate } from 'react-router-dom'
 import Board from '../../component/board';
+import GameContext from '../../state/GameContext';
 
 export const BeginGame = () => {
-
+    const gameContext = useContext(GameContext)
     let navigate = useNavigate();
 
     return (
@@ -22,13 +23,17 @@ export const BeginGame = () => {
                 </svg>
             </div>
             <div className="title">
-                <p>Game With Tanmay</p>
-                <span>Your piece</span>
-                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="64" height="64" fill="white" />
-                    <rect width="9.86491" height="44.3921" rx="4.93245" transform="matrix(0.706472 0.707741 -0.706472 0.707741 44.1619 12.8002)" fill="#2C8DFF" />
-                    <rect width="9.8649" height="44.3921" rx="4.93245" transform="matrix(0.706473 -0.70774 0.706473 0.70774 12.8688 19.7819)" fill="#2C8DFF" />
-                </svg>
+                <p>Game With {gameContext.user === gameContext.challenger ? gameContext.defender : gameContext.challenger}</p>
+                <span>Your piece</span>{gameContext.user === gameContext.challenger ?
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="64" height="64" fill="white" />
+                        <rect width="9.86491" height="44.3921" rx="4.93245" transform="matrix(0.706472 0.707741 -0.706472 0.707741 44.1619 12.8002)" fill="#2C8DFF" />
+                        <rect width="9.8649" height="44.3921" rx="4.93245" transform="matrix(0.706473 -0.70774 0.706473 0.70774 12.8688 19.7819)" fill="#2C8DFF" />
+                    </svg> : <svg width="64" height="64" viewBox="0 0 105 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="105" height="105" fill="white" />
+                        <circle cx="52.5" cy="52.5" r="23.625" stroke="#FF4F4F" stroke-width="15.75" />
+                    </svg>
+                }
             </div>
 
             <div className="board">

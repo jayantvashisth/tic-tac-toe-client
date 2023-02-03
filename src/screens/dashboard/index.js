@@ -30,7 +30,7 @@ function Dashboard() {
                     Authorization: `Bearer ${token}`
                 }
             })
-            // console.log(res.data.user)
+            console.log(res.data.user)
             setGames(res.data.games)
             gameContext.setuser(res.data.user)
         }
@@ -64,7 +64,7 @@ function Dashboard() {
                             games.map((data) => {
                                 return (
                                     <div style={{ padding: "16px" }}>
-                                        <GameCard name={data.defender} date={data.date} roomId={data.uID} />
+                                        <GameCard defender={data.defender} challenger={data.challenger} name={gameContext.user} date={data.date} roomId={data.uID} />
                                     </div>
                                 )
                             })
