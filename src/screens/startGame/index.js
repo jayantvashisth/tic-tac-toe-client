@@ -19,7 +19,7 @@ function StartGame() {
         try {
             setloading(true)
             let token = localStorage.getItem('token')
-            const res = await axios.post(`http://localhost:5000/api/game/creategame`, {
+            const res = await axios.post(`https://tick-tack-toe-server-git-master-jayantvashisth.vercel.app/api/game/creategame`, {
                 email: email,
                 token: token
             })
