@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './index.css'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import { Toast } from '../../component/toast';
 
 
 function Login() {
@@ -9,6 +10,7 @@ function Login() {
     const [userName, setUserName] = useState("")
     const [password, setpassword] = useState("")
     const [loading, setloading] = useState(false)
+    const [isError, setisError] = useState(false)
 
     const loginUser = async () => {
         try {
@@ -23,13 +25,12 @@ function Login() {
             navigate("/dashboard")
             localStorage.setItem('token', res.data.token)
 
-            console.log("hello")
-
             setloading(false)
 
         }
         catch (error) {
             setloading(false)
+            setisError(true)
         }
     }
 
@@ -62,6 +63,7 @@ function Login() {
                 </div>
             </div>
             <div className="button">
+                {isError && <Toast text={"Enter correct details."} error={true} onclick={() => { setisError(false) }} />}
                 <div className="login" onClick={() => { loginUser() }}>
                     <button>Login</button>
                 </div>

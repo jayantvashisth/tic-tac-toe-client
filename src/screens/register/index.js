@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import './index.css'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import { Toast } from '../../component/toast';
 
 function Register() {
     let navigate = useNavigate();
     const [isRegister, setisRegister] = useState(false)
+    const [isError, setisError] = useState(false)
     const [loading, setloading] = useState(false)
     const [userName, setUserName] = useState("")
     const [password, setpassword] = useState("")
@@ -25,7 +27,11 @@ function Register() {
                 name: name
             })
             if (res.data.loggedIn) {
-                navigate('/login')
+                setisRegister(true)
+                // navigate('/login')
+            }
+            else {
+                setisError(true)
             }
             setloading(false)
 
@@ -72,8 +78,10 @@ function Register() {
                 </div>
             </div>
             <div className="button">
+                {isRegister && <Toast text={"Congratulations!!! Account created. Go back and login"} onclick={() => { setisRegister(false) }} />}
+                {isError && <Toast text={"Something is wrong"} error={true} onclick={() => { setisError(false) }} />}
                 <div className="register" onClick={() => { registerUser() }}>
-                    <button>Register</button>
+                    <button style={isRegister ? { background: "#E0E0E0" } : {}}>Register</button>
                 </div>
             </div>
         </div >
