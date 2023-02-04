@@ -18,7 +18,7 @@ function Register() {
 
             console.log(userName, password)
 
-            const res = await axios.post(`http://localhost:5000/api/auth/register`, {
+            const res = await axios.post(`https://tick-tack-toe-server.vercel.app/api/auth/register`, {
                 password: password,
                 userName: userName,
                 email: email,

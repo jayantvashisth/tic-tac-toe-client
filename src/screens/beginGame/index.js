@@ -24,7 +24,7 @@ export const BeginGame = () => {
         try {
             setloading(true)
             let token = localStorage.getItem('token')
-            let res = await axios.get(`http://localhost:5000/api/game/getmygame/${gameContext.roomID}`, {
+            let res = await axios.get(`https://tick-tack-toe-server.vercel.app/api/game/getmygame/${gameContext.roomID}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -50,7 +50,7 @@ export const BeginGame = () => {
         try {
             setloading(true)
             let token = localStorage.getItem('token')
-            let res = await axios.put(`http://localhost:5000/api/game/updategame/${gameContext.roomID}`, {
+            let res = await axios.put(`https://tick-tack-toe-server.vercel.app/api/game/updategame/${gameContext.roomID}`, {
                 token: token,
                 position: squares,
                 status: newStatus

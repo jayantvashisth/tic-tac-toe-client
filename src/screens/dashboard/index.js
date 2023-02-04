@@ -25,7 +25,7 @@ function Dashboard() {
             console.log("hi there")
             let token = localStorage.getItem('token')
             // console.log(token)
-            let res = await axios.get('http://localhost:5000/api/game/getallgames', {
+            let res = await axios.get('https://tick-tack-toe-server.vercel.app/api/game/getallgames', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
