@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import './index.css'
 import { useNavigate } from 'react-router-dom';
-import { socket } from '../../socket'
 import GameContext from '../../state/GameContext';
 
 
@@ -10,7 +9,6 @@ function GameCard(props) {
     let navigate = useNavigate()
 
     const joinRoom = () => {
-        socket.emit('join', props.roomId);
         gameContext.setChallenger(props.challenger)
         gameContext.setDefender(props.defender)
         gameContext.setroomID(props.roomId)
@@ -23,10 +21,10 @@ function GameCard(props) {
                 <span>Game with {props.name === props.challenger ? props.defender : props.challenger}</span>
             </div>
             <div className="match-info">
-                <span>{props.name} just made their move! It’s your turn to play now.</span>
+                <span>{gameContext.user === props.status ? "You will start the game" : `${props.status} will start the game`}</span>
             </div>
             <div className="time">
-                <span>{props.roomId}</span>
+                <span>{props.date}</span>
             </div>
             <div className="play-button">
                 <button onClick={() => { joinRoom(); }}>Play!</button>

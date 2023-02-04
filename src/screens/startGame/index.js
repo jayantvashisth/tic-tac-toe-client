@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './index.css'
-import {socket} from '../../socket'
 import GameContext from '../../state/GameContext';
 import axios from 'axios';
 
@@ -9,7 +8,7 @@ import axios from 'axios';
 function StartGame() {
     const gameContext = useContext(GameContext)
     let navigate = useNavigate();
-    const ENDPT = `http://localhost:5000/`
+
     const [loading, setloading] = useState(false)
     const [email, setEmail] = useState("")
     const [roomid, setRoomid] = useState("")
@@ -27,10 +26,10 @@ function StartGame() {
             console.log(res)
 
             if (res.data.success) {
-                gameContext.setroomID(res.data.roomId)
+                gameContext.setroomID(res.data.room)
                 navigate("/begingame")  //create game start screen
-                setRoomid(res.data.roomId)
-                console.log("dasda", res.data.roomId)
+                // setRoomid(res.data.roomId)
+                // console.log("dasda", res.data.roomId)
             }
 
             setloading(false)

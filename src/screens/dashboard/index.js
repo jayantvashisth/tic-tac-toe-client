@@ -64,7 +64,7 @@ function Dashboard() {
                             games.map((data) => {
                                 return (
                                     <div style={{ padding: "16px" }}>
-                                        <GameCard defender={data.defender} challenger={data.challenger} name={gameContext.user} date={data.date} roomId={data.uID} />
+                                        <GameCard defender={data.defender} challenger={data.challenger} name={gameContext.user} status={data.status} date={data.date} roomId={data._id} />
                                     </div>
                                 )
                             })
@@ -74,7 +74,7 @@ function Dashboard() {
                 }
 
 
-                <div className="btn" style={arr.length === 0 ? { visibility: "hidden" } : {}}>
+                <div className="btn" style={games.length === 0 ? { visibility: "hidden" } : {}}>
                     <button onClick={() => { navigate('/startgame') }}>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_6_233)">
